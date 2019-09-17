@@ -261,7 +261,7 @@ html {
 									<tr align="center">
 										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%"></td>
 										<td style="width:20%"><img alt="" src="img/Deals.png" style="width:55%"></td>
-										<td style="width:20%"><img alt="" src="img/ARCam.png" style="width:55%"></td>
+										<td style="width:20%"><a href="#" id="open-file-uploader"><img alt="" src="img/ARCam.png" style="width:55%"></a></td>
 										<td style="width:20%"><img alt="" src="img/Essentials.png" style="width:55%"></td>
 										<td style="width:20%"><img alt="" src="img/Pass.png" style="width:55%"></td>
 									</tr>	
@@ -273,6 +273,7 @@ html {
 										<td>My Trip</td>
 									</tr>
 								</table>
+								<input id="Cam1" type="file" accept="image/*" capture="camera" style="display:none">
 							</div>
 						</td>
 					</tr>
@@ -283,6 +284,12 @@ html {
 </table>
 </body>
 <script type="text/javascript">
+
+const aTag = document.getElementById("open-file-uploader");
+const fileInput = document.getElementById("Cam1");
+aTag.addEventListener("click", () => fileInput.click());
+
+
 var slideIndex = 0;
 showSlides();
 
