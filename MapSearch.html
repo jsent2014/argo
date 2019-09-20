@@ -1,0 +1,116 @@
+﻿<html>
+
+<head>
+<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="js/materialize.min.js"></script>
+ 
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#AAAAAA;
+ 
+  
+}
+
+div{
+	
+}
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+
+</style>
+
+</head>
+<body style="margin:0">
+<div style="margin:0px">
+	<iframe id="Frame1" src="https://www.google.com/maps/d/embed?mid=1Xbkrh789WSsHPBfq4_JpXs5EV2g" width="100%" height="100%" style="border:none"></iframe>
+	
+</div>
+<div class="carousel" style="position:fixed;bottom:0px;margin-bottom:-20px">
+	<div class="carousel-item" href="#1!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666" align="center">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#2!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#3!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#4!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#5!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#6!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+	<div class="carousel-item" href="#7!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666">
+		<div style="background:#999999;border-radius:3px 3px 3px;height:150px">&nbsp;</div>
+		<span style="font-weight:bold">ATTRACTION</span>
+	</div>	
+</div>
+<div class="footer">
+	<table style="width:100%">
+		<tr align="center" style="border:none">
+			<td style="width:20%;text-align:center;padding:0px">
+			<img alt="" src="img/Discover1.png" style="width:55%;padding:0px"></td>
+			<td style="width:20%;text-align:center;padding:0px;border:0px">
+			<img alt="" src="img/Deals.png" style="width:55%"></td>
+			<td style="width:20%;text-align:center;padding:0px;border:0px">
+			<img alt="" src="img/ARCam.png" style="width:55%"></td>
+			<td style="width:20%;text-align:center;padding:0px;border:0px">
+			<img alt="" src="img/Essentials.png" style="width:55%"></td>
+			<td style="width:20%;text-align:center;padding:0px;border:0px">
+			<img alt="" src="img/Pass.png" style="width:55%"></td>
+		</tr>	
+		<tr align="center" style="font-size:10pt;font-weight:bold;color:#FFFFFF;border:none">
+			<td style="color:#000000;text-align:center;padding:0px;border:none">Discover</td>
+			<td style="text-align:center;padding:0px;border:none">Deals</td>
+			<td style="text-align:center;padding:0px;border:none">AR.Go</td>
+			<td style="text-align:center;padding:0px;border:none">Essentials</td>
+			<td style="text-align:center;padding:0px;border:none">My Trip</td>
+		</tr>
+	</table>
+</div></body>
+<script type="text/javascript">
+document.getElementById("Frame1").height=screen.availHeight
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+</script>
+</html>
