@@ -8,7 +8,9 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="js/materialize.min.js"></script>
- 
+
+<script type="text/javascript" src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBrW7r0l7pTABsSHgs1AVvJz-F5V4EVfEU&sensor=false&libraries=places'></script>
+
 <style type="text/css">
 html {
 	scroll-behavior: smooth;
@@ -43,8 +45,7 @@ table{
 </head>
 <body style="margin:0">
 <div style="margin:0px">
-	<iframe id="Frame1" src="https://www.google.com/maps/d/embed?mid=1Xbkrh789WSsHPBfq4_JpXs5EV2g" width="100%" height="100%" style="border:none"></iframe>
-	
+	<div id="map" style="height: 600px; width: 100%;"></div>
 </div>
 <div class="carousel" style="position:fixed;bottom:0px;margin-bottom:-20px">
 	<div class="carousel-item" href="#1!" style="background-color:#FFFFFF;padding:10px;box-shadow: 0px 1px 5px #666666" align="center">
@@ -100,7 +101,6 @@ table{
 	</table>
 </div></body>
 <script type="text/javascript">
-document.getElementById("Frame1").height=screen.availHeight
 
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
@@ -109,8 +109,23 @@ document.getElementById("Frame1").height=screen.availHeight
 
   // Or with jQuery
 
+
+locations = [0]
+center1=1.2866942,center2=103.8521297
+
   $(document).ready(function(){
     $('.carousel').carousel();
   });
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 13,
+		center: new google.maps.LatLng(center1, center2),
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+
+	var infowindow = new google.maps.InfoWindow();
+
+	var marker, i;
+
 </script>
 </html>
