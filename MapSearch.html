@@ -41,87 +41,24 @@ table{
 	font-size:30px;
 }
 
+.carousel-item{
+	background-color:#FFFFFF;
+	padding:5px;
+	box-shadow: 0px 1px 5px #666666;
+	border-radius:3px 3px 3px;
+}
 </style>
 
 </head>
-<body style="margin:0">
+<body style="margin:0" onload="jInitMe()">
 <div style="margin:0px" align="center">
 	<div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-			var locations = [
-		  ['Thian Hock Keng Temple',1.2812037,103.8431818, 4],
-		  ['Tintin Shop',1.2832674,103.8425863, 4],
-		  ['Keong Saik Road',1.2808043,103.8395402, 4],
-		];
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: new google.maps.LatLng(1.279975,103.8440358),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var marker, i;
-
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
-      }
-    </script>
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmoBX_A2XgfG2_CO5TVbJtZEStOT14uzc&callback=initMap"
     async defer></script>
 </div>
-<div class="carousel" style="position:fixed;bottom:0px;margin-bottom:-20px">
-	<div class="carousel-item" href="#3!" style="background-color:#FFFFFF;padding:5px;box-shadow: 0px 1px 5px #666666;border-radius:3px 3px 3px;" align="center">
-		<div><img alt="" src="Photos/Attractions/3.jpg" style="width:100%;height:130px;border-radius:3px 3px 3px">&nbsp;</div>
-		<div>
-			<table style="width:100%">
-				<tr>
-					<td style="padding:3"><span style="font-size:10pt">Thian Hock Keng Temple</span></td>
-					<td  style="padding:3" align="right"><img alt="" src="img/pin.png" style="width:25px;height:20px;margin-right:-10px"></td>
-				</tr>
-			</table>
-		</div>
-		<div style=";padding:5px"><span style="font-weight:bold;font-size:8pt">ATTRACTION</span></div>		
-	</div>	
-	<div class="carousel-item" href="#1!" style="background-color:#FFFFFF;padding:5px;box-shadow: 0px 1px 5px #666666;border-radius:3px 3px 3px;" align="center">
-		<div><img alt="" src="Photos/Attractions/1.jpg" style="width:100%;height:130px;border-radius:3px 3px 3px">&nbsp;</div>
-		<div>
-			<table style="width:100%">
-				<tr>
-					<td style="padding:3"><span style="font-size:14pt">Tintin Shop</span></td>
-					<td  style="padding:3" align="right"><img alt="" src="img/pin.png" style="width:25px;height:20px;margin-right:-14px"></td>
-				</tr>
-			</table>
-		</div>
-		<div style=";padding:5px"><span style="font-weight:bold;font-size:8pt">ATTRACTION</span></div>		
-	</div>	
-	<div class="carousel-item" href="#2!" style="background-color:#FFFFFF;padding:5px;box-shadow: 0px 1px 5px #666666;border-radius:3px 3px 3px;" align="center">
-		<div><img alt="" src="Photos/Attractions/2.jpg" style="width:100%;height:130px;border-radius:3px 3px 3px">&nbsp;</div>
-		<div>
-			<table style="width:100%">
-				<tr>
-					<td style="padding:3"><span style="font-size:14pt">Keong Saik Road</span></td>
-					<td  style="padding:3" align="right"><img alt="" src="img/pin.png" style="width:25px;height:20px;margin-right:-14px"></td>
-				</tr>
-			</table>
-		</div>
-		<div style=";padding:5px"><span style="font-weight:bold;font-size:8pt">ATTRACTION</span></div>		
-	</div>
-	
+<div id="DivCarousel" class="carousel" style="position:fixed;bottom:0px;margin-bottom:-20px" onfocus="" >
+
 </div>
 <div class="footer">
 	<table style="width:100%">
@@ -148,15 +85,88 @@ table{
 </div></body>
 <script type="text/javascript">
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, options);
-  });
+var markers = [];  
+  
+var map;
+function initMap() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			//alert(this.responseText)
+			var obj = JSON.parse(this.responseText)
+			//var locations = [,['Tintin Shop',1.2832674,103.8425863, 4],['Keong Saik Road',1.2808043,103.8395402, 4],];
+			//alert(obj.Loc)
+			//x=[['Thian Hock Keng Temple',1.2812037,103.8431818, 4],['Tintin Shop',1.2832674,103.8425863, 4],['Casserole',1.2577377,103.8076075,4]]
+			var locations = obj.Loc
+			var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 15,
+				center: new google.maps.LatLng(obj.Lat,obj.Long),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+			
+			var infowindow = new google.maps.InfoWindow();
+			
+			var i;
+			
+			for (i = 0; i < locations.length; i++) {  
+				var MarkerIndex=locations[i][4];
+				markers[MarkerIndex] = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					map: map,
+				});
+				
+				(function(marker,i){
+					google.maps.event.addListener(marker, 'click', function(){ 
+						infowindow.setContent(locations[i][0]);
+						infowindow.open(map, marker);
+					}); 
+				}(markers[MarkerIndex],i));
+			}
 
-  // Or with jQuery
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/MapSearch.csp?d1=Map"
+	xhttp.open("GET", URL, true);
+	xhttp.send();
 
-  $(document).ready(function(){
-    $('.carousel').carousel();
-  });
+	
+}
+
+
+function jInitMe(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById('DivCarousel').innerHTML=this.responseText	
+			
+			document.addEventListener('DOMContentLoaded', function() {
+				var elems = document.querySelectorAll('.carousel');
+				var instances = M.Carousel.init(elems, options);
+			});
+			
+			// Or with jQuery
+			
+			$(document).ready(function(){
+			
+				 $('.carousel').carousel({
+				    duration: 100,
+				    indicators: true,
+				    onCycleTo: function(data) {
+				      jPopPin(data.id)
+				   }
+				});
+			});
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/MapSearch.csp?d1=Carousel"
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+
+}
+
+function jPopPin(val){
+	google.maps.event.trigger(markers[val], 'click');
+
+}
 </script>
 </html>

@@ -32,7 +32,7 @@ table{
 </style>
 
 </head>
-<body style="margin:0">
+<body style="margin:0" onload="jInitMe()">
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -57,17 +57,19 @@ table{
 							<div align="center" style="position:absolute;top:25%;left:25%">
 								<table style="width:200px" cellpadding="10">
 									<tr>
-										<td align="center"><img alt="" src="img/AppUser.png" style="width:90px"></td>
+										<td align="center"><img id="ImgDefault" alt="" src="img/AppUser.png" style="width:90px;display:inline">
+											<img id="ImgAppUser" alt="" src="http://argo-app.ddns.net/csp/argo/photos/client/jsent.jpg" style="width:90px;border-radius: 50px 50px 50px;display:none">
+										</td>
 									</tr>
 									<tr>
-										<td align="center">Good Afternoon!</td>
+										<td align="center"><span id="L1">Good Afternoon!</span></td>
 									</tr>
 									<tr>
 										<td align="center" style="padding-top:0px;color:#666666">Welcome to Singapore!</td>
 									</tr>
 									<tr>
 										<td align="center" style="padding-top:0px">
-											<div style="background-color:#FF0E0E;padding:10px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:10pt" onclick="window.open('Login.html','_self')">Sign In / Sign Up</div>
+											<div id="B1" style="background-color:#FF0E0E;padding:10px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:10pt;display:inline" onclick="window.open('Login.html','_self')">Sign In / Sign Up</div>
 										</td>
 									</tr>
 								</table>
@@ -104,4 +106,32 @@ table{
 	</tr>
 </table>
 </body>
+<script type="text/javascript">
+function jInitMe(){
+	var userid=localStorage.getItem("userid")
+	
+	if(userid!=null){
+		document.getElementById("ImgDefault").style.display="none"
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			
+			if (this.readyState == 4 && this.status == 200) {
+				var obj = JSON.parse(this.responseText)
+				
+				document.getElementById("L1").innerHTML = "Good Day " + obj.FName + "!"
+				document.getElementById("ImgAppUser").style.display="inline"
+				document.getElementById("ImgAppUser").src=obj.Photo
+				document.getElementById("B1").style.display="none"
+			}
+		}
+		var URL="http://argo-app.ddns.net/csp/argo/app/Welcome.csp?" + "id=" + userid
+		xhttp.open("GET", URL, true);
+		xhttp.send();
+
+		
+	}
+	
+	
+}
+</script>
 </html>

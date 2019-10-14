@@ -80,9 +80,29 @@ html {
 	font-size:30px;
 }
 
+.EntryText{
+	position:relative;
+	top:25px;
+	font-size:10pt;
+	font-weight:bold;
+	vertical-align:middle;
+	text-shadow: 1px 1px #333333;
+}
+.SnapPhoto{
+	position:relative;top:-37px;
+	background-color:#FFFFFF;
+	text-align:center;
+	opacity:.8;
+	padding:5px;
+}
+.SnapSpan{
+	color:#000000;
+	font-size:9pt;
+	font-weight:bold;
+}
 </style>
 </head>
-<body style="margin:0">
+<body style="margin:0" onload="jInitMe()">
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -107,7 +127,6 @@ html {
 							<div style="margin-top:-60px;position:relative;z-index:-1">
 								<!-- Slideshow container -->
 								<div class="slideshow-container" style="z-index:-1; left: 0px; top: 0px;">
-									
 									<!-- Full-width images with number and caption text -->
 									<div class="mySlides fade">
 									<div class="numbertext" style="display:none">1 / 3</div>
@@ -150,18 +169,10 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivEarn" style="width:410px;overflow-x:scroll">
+									
 								</div>
 							</div>
-							<br>
 							<div align="center">
 								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
 									<tr>
@@ -169,18 +180,10 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivAttractions" style="width:410px;overflow-x:scroll">
+									
 								</div>
 							</div>
-							<br>
 							<div align="center">
 								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
 									<tr>
@@ -188,18 +191,9 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivFood" style="width:410px;overflow-x:scroll">
 								</div>
 							</div>
-							<br>
 							<div align="center">
 								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
 									<tr>
@@ -207,18 +201,9 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivPhotos" style="width:410px;overflow-x:scroll">
 								</div>
 							</div>
-							<br>
 							<div align="center">
 								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
 									<tr>
@@ -226,18 +211,9 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivEvents" style="width:410px;overflow-x:scroll">
 								</div>
 							</div>
-							<br>
 							<div align="center">
 								<table style="width:95%;color:#000000;font-weight:bold;font-size:14pt">
 									<tr>
@@ -245,29 +221,21 @@ html {
 										<td align="right"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:600px">
-										<tr>
-											<td class="boxItem" onclick="window.open('Article.html','_self')"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-											<td class="boxItem"></td>
-										</tr>
-									</table>
+								<div id="DivArticles" style="width:410px;overflow-x:scroll">
 								</div>
 							</div>
 							<br><br><br><br>
 							<div class="footer">
 								<table style="width:100%">
 									<tr align="center">
-										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%"></td>
+										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%" onclick="window.open('DiscoverList.html','_self')"></td>
 										<td style="width:20%"><img alt="" src="img/Deals.png" style="width:55%"></td>
 										<td style="width:20%"><a href="#" id="open-file-uploader"><img alt="" src="img/ARCam.png" style="width:55%"></a></td>
 										<td style="width:20%"><img alt="" src="img/Essentials.png" style="width:55%"></td>
 										<td style="width:20%"><img alt="" src="img/Pass.png" style="width:55%"></td>
 									</tr>	
 									<tr align="center" style="font-size:10pt;font-weight:bold">
-										<td style="color:#000000">Discover</td>
+										<td style="color:#000000" onclick="window.open('DiscoverList.html','_self')">Discover</td>
 										<td>Deals</td>
 										<td onclick="window.open('ARCam.html','_self')">AR.GO</td>
 										<td>Essentials</td>
@@ -301,6 +269,86 @@ function showSlides() {
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
 
+function jInitMe(){
+	jPopEarn()
+	jPopAttractions()
+	jPopFood()
+	jPopPhotos()
+	jPopEvents()
+	jPopArticles()
+}
+
+function jPopEarn(){
+	var xhttp1 = new XMLHttpRequest();
+	xhttp1.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivEarn").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopEarn"
+	xhttp1.open("GET", URL, true);
+	xhttp1.send();
+}
+
+function jPopAttractions(){
+	var xhttp2 = new XMLHttpRequest();
+	xhttp2.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivAttractions").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopAttractions"
+	xhttp2.open("GET", URL, true);
+	xhttp2.send();
+}
+
+function jPopFood(){
+	var xhttp3 = new XMLHttpRequest();
+	xhttp3.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivFood").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopFood"
+	xhttp3.open("GET", URL, true);
+	xhttp3.send();
+}
+
+function jPopPhotos(){
+	var xhttp4 = new XMLHttpRequest();
+	xhttp4.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivPhotos").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopPhotos"
+	xhttp4.open("GET", URL, true);
+	xhttp4.send();
+}
+
+function jPopEvents(){
+	var xhttp5 = new XMLHttpRequest();
+	xhttp5.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivEvents").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopEvents"
+	xhttp5.open("GET", URL, true);
+	xhttp5.send();
+}
+
+function jPopArticles(){
+	var xhttp6 = new XMLHttpRequest();
+	xhttp6.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivArticles").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopArticles"
+	xhttp6.open("GET", URL, true);
+	xhttp6.send();
+}
 
 
 </script>

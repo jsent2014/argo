@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<script src="js/jquery.js"></script>
 <style type="text/css">
 html {
   scroll-behavior: smooth;
@@ -92,7 +92,7 @@ html {
 }
 </style>
 </head>
-<body style="margin:0">
+<body style="margin:0" onload="jInitMe()">
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -153,7 +153,7 @@ html {
 									</tr>
 								</table>
 							</div>
-							<div style="width:410px;overflow-x:scroll">
+							<div style="width:410px;overflow-x:scroll;display:none">
 								<table cellpadding="5">
 									<tr>
 										<td class="filter"><div style="border:2px #FF0E0E solid;padding:5px; border-radius:5px 5px 5px;vertical-align:middle">Exhibits &amp; Installations <img alt="" style="width:10px;vertical-align:middle" src="img/close.png"></div></td>
@@ -163,129 +163,8 @@ html {
 									</tr>	
 								</table>
 							</div>
-							<div align="center">
-								<table style="width:95%" cellpadding="8px" cellspacing="0">
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart1a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart1')">
-											<img id="Heart1b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart1')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart2a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart2')">
-											<img id="Heart2b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart2')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart3a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart3')">
-											<img id="Heart3b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart3')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart4a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart4')">
-											<img id="Heart4b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart4')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart5a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart5')">
-											<img id="Heart5b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart5')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart6a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart6')">
-											<img id="Heart6b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart6')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart7a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart7')">
-											<img id="Heart7b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart7')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart8a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart8')">
-											<img id="Heart8b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart8')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart9a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart9')">
-											<img id="Heart9b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart9')">
-										</td>
-									</tr>
-									<tr>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid"><img alt="" src="Photos/Discover/1.jpg" class="thumbnail"></td>
-										<td valign="center" style="padding-top:10px;border-bottom:1px #FF0E0E solid">
-											<span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span><br>
-											<span style="font-size:16pt;font-weight:bold">Dinner Cruise</span><br>
-											<img alt="" src="img/4Star.png" style="width:80px"> <span style="padding-left:10px">2.9 km</span>
-										</td>
-										<td style="width:1%;border-bottom:1px #FF0E0E solid">
-											<img id="Heart10a" alt="" src="img/heart1.png" style="width:40px;display:inline" onclick="jToggleHeart('Heart10')">
-											<img id="Heart10b" alt="" src="img/heart2.png" style="width:40px;display:none" onclick="jToggleHeart('Heart10')">
-										</td>
-									</tr>
-								</table>
+							<div id="DivItem" align="center">
+							
 							</div>
 							<br><br><br><br>
 							<div class="footer">
@@ -318,6 +197,20 @@ html {
 var slideIndex = 0;
 showSlides();
 
+function jInitMe(){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+		document.getElementById("DivItem").innerHTML=this.responseText
+		
+	}
+}
+var URL="http://argo-app.ddns.net/csp/argo/app/DiscoverList.csp"
+xhttp.open("GET", URL, true);
+xhttp.send();
+
+}
+
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -341,6 +234,10 @@ function jToggleHeart(val){
 	}
 
 }
+
+
+
+
 
 </script>
 </html>

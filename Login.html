@@ -43,7 +43,7 @@ table{
 							<div style="padding:5px;box-shadow: 0px 1px 5px #CCCCCC;">
 								<table style="width:100%" cellpadding="0" cellspacing="0">
 									<tr>
-										<td style="width:80px"><img alt="" src="img/Left.png" style="height:25px;margin-left:-10px">								
+										<td style="width:80px"><img alt="" src="img/left.png" style="height:25px;margin-left:-10px">								
 										</td>
 										<td align="center">Log In											
 										</td>
@@ -73,11 +73,11 @@ table{
 								</table><br>
 								<span>or</span><br><br>
 								<div>
-									<input type="text" style=";border-radius: 5px 5px 5px ;font-size:10pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="EMAIL"><br><br>
-									<input type="text" style=";border-radius: 5px 5px 5px ;font-size:10pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="PASSWORD"><br><br>
+									<input type="text" id="T1" name="T1" style=";border-radius: 5px 5px 5px ;font-size:10pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="USER NAME"><br><br>
+									<input type="password" id="T2" name="T2" style=";border-radius: 5px 5px 5px ;font-size:10pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="PASSWORD"><br><br>
 								</div>
 								<div style="width:90%;font-size:10pt;color:#FF0E0E" align="left"><span>Forgot password?</span></div><br>
-								<div style="background-color:#FF0E0E;padding:15px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:12pt;width:50%;font-weight:bold" onclick="window.open('index.html','_self')">Log In</div>
+								<div style="background-color:#FF0E0E;padding:15px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:12pt;width:50%;font-weight:bold" onclick="jLogin()">Log In</div>
 							</div>
 							<br><br><br>
 							<div class="footer">
@@ -111,4 +111,31 @@ table{
 	</tr>
 </table>
 </body>
+<script type="text/javascript">
+T1=document.getElementById("T1"),T2=document.getElementById("T2")
+localStorage.removeItem("userid")
+
+function jLogin(){	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			// Typical action to be performed when the document is ready:
+			//myApp.alert(this.responseText)
+			if (this.responseText==999){
+				alert("Invalid User Name or Password")
+				return false
+			}
+			
+			var userid = this.responseText
+			localStorage.setItem("userid",userid);
+			
+			var obj = JSON.parse(this.responseText)
+			window.open("Welcome.html","_self")
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/AppUserLogin.csp?" + "u=" + T1.value + "&p=" + T2.value
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+}
+</script>
 </html>
