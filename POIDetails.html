@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 <script src="js/jquery.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -53,7 +53,7 @@ table{
 </style>
 
 </head>
-<body style="margin:0">
+<body style="margin:0" onload="jInitMe()">
 <table style="width:100%" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>
@@ -66,7 +66,7 @@ table{
 									<tr>
 										<td style="width:80px"><img alt="" src="img/left.png" style="height:25px;margin-left:-10px">								
 										</td>
-										<td align="center"><span>Trick Eye Museum Singapore</span>											
+										<td align="center"><span id="L1"></span>											
 										</td>
 										<td style="width:20%" align="right" valign="middle">
 											<img alt="" src="img/cart1.png" style="width:25px">
@@ -76,7 +76,7 @@ table{
 								</table>
 							</div>
 							<div align="center">
-								<img alt="" src="img/sample1.jpg" style="width:100%;z-index:-1;position:relative">
+								<img id="img1" alt="" src="img/noimage.png" style="width:99%;height:300px;z-index:-1;position:relative; left: 0px; top: 0px;">
 								<table style="width:95%;margin-top:-50px">
 									<tr>
 										<td><img alt="" src="img/heart3.png" style="width:30px"> <img alt="" src="img/share2.png" style="width:30px"></td>
@@ -94,7 +94,7 @@ table{
 										<td align="right"><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div style="width:410px;overflow-x:scroll">
+								<div style="width:410px;overflow-x:scroll;display:none">
 									<table cellspacing="5" style="width:600px">
 										<tr>
 											<td class="boxItem"></td>
@@ -108,16 +108,16 @@ table{
 							<div align="center" style="margin-top:5px">
 								<table style="width:95%" cellpadding="3" cellspacing="0">
 									<tr>
-										<td><span style="font-size:10pt;color:#FF0E0E">ATTRACTIONS</span></td>
+										<td><span id="L2" style="font-size:10pt;color:#FF0E0E"></span></td>
 										<td align="right" style="width:40%"><img alt="" src="img/4AStar.png" style="height:15px"></td>
 									</tr>
 									<tr>
-										<td><span style="font-weight:bold;font-size:20pt">Trick Eye Museum Singapore</span></td>
+										<td><span id="L3" style="font-weight:bold;font-size:20pt"></span></td>
 										<td align="right"><img alt="" src="img/call.png" style="width:30px"></td>
 									</tr>
-									<tr style="font-size:10pt">
+									<tr style="font-size:10pt;display:none">
 										<td>
-											<div style="padding-bottom:5px"><span> Floor 01, Unit 43/44, Block 26, Sentosa Gateway, , 098138</span></div>
+											<div id="L4" style="padding-bottom:5px"><span> Floor 01, Unit 43/44, Block 26, Sentosa Gateway, , 098138</span></div>
 											<div><span style="color:#00CC99">Open today:</span> <span>10:00 AM - 09:00 PM</span></div>
 										</td>
 										<td></td>
@@ -125,10 +125,7 @@ table{
 								</table>
 							</div>
 							<hr style="border-top:1px #FF0E0E solid; width:95%">
-							<div style="width:95%" align="left">
-								<p>Get ready to let your imagination run wild in Trick Eye Museum Singapore, an internationally renowned 3D art museum from Korea. With its huge array of art exhibits hand-painted by dedicated Korean artists, each exhibit comes alive with the use of a special art technique that makes 2D art pop up into 3D. Feel, touch and interact with the exhibits in 6 different zones, and enjoy a day filled with fun, laughter, adventure and excitement.\n With Trick Eye Museum’s very own Augmented Reality mobile app, you will discover a hidden world of Augmented Reality seen only through the app. Download the “Trickeye” app and watch as your photos and videos come alive with hidden animals, magic, fireworks and other special effects!</p>							</div>
-							<div style="width:95%" align="right">
-								<span style="color:#FF0E0E;text-decoration:underline" onclick="window.open('Attraction.html','_self')">more</span>
+							<div id="L5" style="width:95%" align="left">
 							</div>
 							<hr style="border-top:1px #FF0E0E solid; width:95%">
 							<div style="width:95%" align="left">
@@ -168,7 +165,7 @@ table{
 							</div>
 							<hr style="border-top:1px #FF0E0E solid; width:95%">
 							<div style="width:95%" align="left">
-								<span style="font-weight:bold;font-size:36pt">4.4</span>&nbsp;<span style="font-size:16pt;color:#666666"> out of 5</span><br>
+								<span id="L6" style="font-weight:bold;font-size:36pt"></span>&nbsp;<span style="font-size:16pt;color:#666666"> out of 5</span><br>
 								<div style="width:410px;overflow-x:scroll">
 									<table cellspacing="5" style="width:1200px">
 										<tr>
@@ -222,4 +219,34 @@ table{
 	</tr>
 </table>
 </body>
+<script type="text/javascript">
+
+function jInitMe(){
+	var refno=localStorage.getItem("poidetails")
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		
+		if (this.readyState == 4 && this.status == 200) {
+			
+			var obj = JSON.parse(this.responseText)
+			//alert(this.responseText)
+			document.getElementById("L1").innerHTML=obj.Name
+			document.getElementById("L2").innerHTML=obj.Category
+			document.getElementById("L3").innerHTML=obj.Name
+			document.getElementById("L4").innerHTML=obj.Address
+			document.getElementById("L5").innerHTML=obj.Body
+			document.getElementById("L6").innerHTML=obj.Rating
+			document.getElementById("img1").src=obj.Photo
+			
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/POIDetails.csp?" + "id=" + refno
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+
+	
+	
+}
+</script>
 </html>

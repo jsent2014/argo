@@ -1,0 +1,226 @@
+﻿<html>
+<head>
+<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:"Calibri";
+	color:#333333;
+ 
+  
+}
+
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+::placeholder {
+  color: #AAAAAA;
+  opacity: 1; /* Firefox */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+select {
+    direction: rtl;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+</style>
+
+</head>
+<body style="margin:0" onload="jInitMe()">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<div align="center" style="width:100%;padding-top:40px">
+								<table style="width:80%" cellpadding="3">
+									<tr align="center" style="font-weight:bold;font-size:14pt">
+										<td style="width:40%">Sign in
+										</td>
+										<td style="width:50%"><div style="border-bottom:2px #FF0E0E solid;width:120px;white-space:nowrap">Create Account</div></td>
+									</tr>
+								</table>
+							</div><br><br>
+							<div align="center">
+								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">First Name</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T1" name="T1" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Last Name</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T2" name="T1" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Date of Birth</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T3" name="T3" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">City of Residence</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T4" name="T4" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Country of Residence</td>
+											<td style="border-bottom:1px #EEEEEE solid">
+												<select id="T5" name="T5" style="width:100%;border:0;background-color:#FFFFFF;text-align:right;color:#333333;text-align:right;padding-right:5px">
+													<option value="China">China</option>
+													<option value="Canada">Canada</option>
+													<option value="Philippines">Philippines</option>
+												</select>
+											</td>
+										</tr>
+									</table>											
+								</div>
+								<br><br>
+								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Email</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T6" name="T6" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Phone Number</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T7" name="T7" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+										</tr>
+									</table>
+								</div>
+								<br><br>
+								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Password</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T8" name="T8" type="password" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+										</tr>
+									</table>
+									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+										<tr>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Confirm Password</td>
+											<td style="border-bottom:1px #EEEEEE solid"><input id="T9" name="T9" type="password" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+										</tr>
+									</table>
+								</div>
+
+								<br>
+								<br>
+								<div style="background-color:#FF0E0E;padding:12px;border-radius:8px 8px 8px ;color:#FFFFFF;font-size:16pt;width:60%;font-weight:bold" onclick="jSignUp()">Sign Up</div>
+							</div>
+							<br><br><br>
+							<div class="footer">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:50%"></td>
+									</tr>	
+									<tr align="center" style="font-size:8pt;color:#FFFFFF">
+										<td>Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+T1=document.getElementById("T1"),T2=document.getElementById("T2"),T3=document.getElementById("T3"),T4=document.getElementById("T4"),T5=document.getElementById("T5")
+T6=document.getElementById("T6"),T7=document.getElementById("T7"),T8=document.getElementById("T8"),T9=document.getElementById("T9")
+
+function jInitMe(){	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			// Typical action to be performed when the document is ready:
+			//myApp.alert(this.responseText)
+			//alert(this.responseText)
+			var obj = JSON.parse(this.responseText)
+			
+			T6.value=obj.Email		
+			T7.value=obj.Phone
+			
+			//window.open("Welcome.html","_self")
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/SignUpDetails.csp?" + "a=InitMe"
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+}
+
+function jSignUp(){
+	if (T8.value!=T9.value){
+		alert("Password did not match!")
+		return false
+	}
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			// Typical action to be performed when the document is ready:
+			//myApp.alert(this.responseText)
+			
+			//var obj = JSON.parse(this.responseText)
+			localStorage.setItem("userid",T6.value);
+
+			window.open("Welcome.html","_self")
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/SignUpDetails.csp?" + "a=SaveMe" + "&val=" + T1.value + "||" + T2.value + "||" + T3.value + "||" + T4.value + "||" + T5.value + "||" + T6.value + "||" + T7.value + "||" + T8.value + "||" + T9.value
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+
+
+	
+}
+
+</script>
+</html>

@@ -1,0 +1,177 @@
+﻿<html>
+<head>
+<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#AAAAAA;
+ 
+  
+}
+
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+
+</style>
+
+</head>
+<body style="margin:0" onload="jInitMe()">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center">
+							<div style="padding:5px;box-shadow: 0px 1px 5px #CCCCCC;">
+								<table style="width:100%">
+									<tr>
+										<td>											
+											<input type="text" style=";border-radius: 3px 3px 3px ;font-size:10pt;width:100%;padding:6px;border:none;padding-left:30px;background-color:#EEEEEE" placeholder="Search by destination or activity...">
+											<img alt="" src="img/search.png" style="width:25px;padding-left:0px;margin-top:-26px">
+										</td>
+										<td style="width:20%" align="center" valign="middle">
+											<img alt="" src="img/cart1.png" style="width:25px">
+											<img alt="" src="img/user2.png" style="width:24px" onclick="window.open('Welcome.html','_self')">
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div style="background-color:#FF0E0E;height:90px">&nbsp;</div>
+							<div align="center" style="margin-top:-50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img id="ImgAppUser" alt="" src="img/AppuUser2.png" style="width:90px;border-radius: 50px 50px 50px">
+								<img id="" alt="" src="img/Edit.png" style="width:24px;margin-left:-8px">
+							</div>
+							<div align="center" style="padding-top:10px">
+								<span id="L1" style="color:#454545;font-weight:bold;font-size:11pt;letter-spacing:1px"></span>
+							</div>
+							<br>
+							<div style="width:90%;border-bottom:1px #FF0E0E solid"></div>
+							<table style="width:90%;font-size:10pt;color:#333333" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/User3.png" style="width:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">My Details</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px" onclick="window.open('MyDetails.html','_self')"></td>
+								</tr>
+							</table>
+							<table style="width:90%;font-size:10pt;color:#454545" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/Setting.png" style="width:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">My Settings</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+								</tr>
+							</table>
+							<table style="width:90%;font-size:10pt;color:#454545" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/Coupon.png" style="height:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">My Deals and Coupons</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+								</tr>
+							</table>
+							<table style="width:90%;font-size:10pt;color:#454545" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/Review.png" style="width:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">My Reviews</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+								</tr>
+							</table>
+							<table style="width:90%;font-size:10pt;color:#454545" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/Help.png" style="width:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">Help Center</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+								</tr>
+							</table>
+							<table style="width:90%;font-size:10pt;color:#454545" cellpadding="10" cellspacing="0">
+								<tr>
+									<td style="width:30px;border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/About.png" style="width:25px"></td>
+									<td style="font-weight:bold;border-bottom:1px #EEEEEE solid">About</td>
+									<td style="width:50px;border-bottom:1px #EEEEEE solid;padding-right:0px" align="right"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+								</tr>
+							</table>
+							<br><br><br><br>
+							<div class="footer" style="display:none">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:55%"></td>
+									</tr>	
+									<tr align="center" style="font-size:10pt;font-weight:bold;color:#FFFFFF">
+										<td>Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+function jInitMe(){
+	var userid=localStorage.getItem("userid")
+	
+	if(userid==null){
+		window.open('Login.html','_self')
+	}
+
+	if(userid!=null){
+		
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			
+			if (this.readyState == 4 && this.status == 200) {
+				
+				var obj = JSON.parse(this.responseText)
+				if(obj=="999"){
+					
+					window.open('Login.html','_self')
+				}
+
+				document.getElementById("L1").innerHTML = "Good Day " + obj.FName + "!"
+				document.getElementById("ImgAppUser").style.display="inline"
+				document.getElementById("ImgAppUser").src=obj.Photo
+			}
+		}
+		var URL="http://argo-app.ddns.net/csp/argo/app/Account.csp?" + "id=" + userid
+		xhttp.open("GET", URL, true);
+		xhttp.send();
+
+		
+	}
+	
+	
+}
+</script>
+</html>

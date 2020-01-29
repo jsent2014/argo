@@ -1,0 +1,114 @@
+﻿<html>
+<head>
+<script src="../js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:"Calibri";
+	color:#333333;
+ 
+  
+}
+
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+::placeholder {
+  color: #AAAAAA;
+  opacity: 1; /* Firefox */
+}
+</style>
+
+</head>
+<body style="margin:0">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<div align="center" style="width:100%;padding-top:30%">
+							</div><br><br><br>
+							<div align="center">
+								<div align="center" style="font-size:16pt">Reset Password</div>
+								<div align="center" style="font-size:11pt;padding-top:5px">A link has been sent to your email address<br>
+									to reset your password. Please check your inbox<br>
+									and follow the instructions in your email.
+								</div>
+							</div>
+							<br><br><br>
+							<div class="footer">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:50%"></td>
+									</tr>	
+									<tr align="center" style="font-size:8pt;color:#FFFFFF">
+										<td>Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+T1=document.getElementById("T1"),T2=document.getElementById("T2")
+localStorage.removeItem("userid")
+
+function jLogin(){	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			// Typical action to be performed when the document is ready:
+			//myApp.alert(this.responseText)
+			if (this.responseText==999){
+				alert("Invalid User Name or Password")
+				return false
+			}
+			
+			var userid = this.responseText
+			localStorage.setItem("userid",userid);
+			
+			var obj = JSON.parse(this.responseText)
+			window.open("Welcome.html","_self")
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/AppUserLogin.csp?" + "u=" + T1.value + "&p=" + T2.value
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+}
+</script>
+</html>

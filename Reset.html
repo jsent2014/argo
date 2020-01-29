@@ -40,48 +40,31 @@ table{
 				<table style="width:100%" cellspacing="0" cellpadding="0">
 					<tr>
 						<td>
-							<div align="center" style="width:100%;padding-top:40px">
-								<table style="width:80%" cellpadding="3">
-									<tr align="center" style="font-weight:bold;font-size:14pt">
-										<td style="width:40%">
-											<div style="border-bottom:2px #FF0E0E solid;width:80px;white-space:nowrap">Sign in</div>
-										</td>
-										<td style="width:50%"><span onclick="window.open('SignUp.html','_self')">Create Account</span></td>
-									</tr>
-								</table>
+							<div align="center" style="width:100%;padding-top:30%">
 							</div><br><br><br>
 							<div align="center">
-								<div align="center" style="font-size:12pt">Sign in with</div><br>
-								<table cellpadding="14" style="margin-top:-15px">
-									<tr>
-										<td><img alt="" src="img/fb.png" style="width:30px"></td>
-										<td><img alt="" src="img/google.png" style="width:30px"></td>
-										<td><img alt="" src="img/wechat.png" style="width:30px"></td>
-									</tr>
-								</table>
-								<span style="font-size:12pt">or</span><br>
-								<div style="padding:5px;padding-top:15px"><input type="text" id="T1" name="T1" style=";border-radius: 5px 5px 5px ;font-size:8pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="EMAIL/PHONE NUMBER"><br style="line-height:5px"></div>
-								<div style="padding:5px"><input type="password" id="T2" name="T2" style=";border-radius: 5px 5px 5px ;font-size:8pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="PASSWORD"></div>
-								<div style="width:90%;font-size:9pt;color:#FF0E0E" align="left"><span onclick="window.open('Reset.html','_self')">Forgot password?</span></div><br>
-								<div style="background-color:#FF0E0E;padding:12px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:12pt;width:50%;font-weight:bold" onclick="jLogin()">Log In</div>
+								<div align="center" style="font-size:16pt">Reset Password</div>
+								<div align="center" style="font-size:10pt;padding-top:5px">Please enter phone number/email used to sign in.</div>
+								<div style="padding:5px;padding-top:25px"><input type="text" id="T1" name="T1" style=";border-radius: 5px 5px 5px ;font-size:8pt;width:90%;padding:12px;border:none;padding-left:10px;background-color:#EEEEEE" placeholder="EMAIL/PHONE NUMBER"><br style="line-height:5px"></div>
+								<br><div style="background-color:#FF0E0E;padding:12px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:14pt;width:50%;font-weight:bold" onclick="window.open('ResetOTP.html','_self')">Reset Password</div>
 							</div>
 							<br><br><br>
 							<div class="footer">
 								<table style="width:100%">
 									<tr align="center">
-										<td style="width:20%;">
-										<img alt="" src="img/Discover.png" style="width:50%" onclick="window.open('home.html','_self')"></td>
-										<td style="width:20%;">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:50%"></td>
+										<td style="width:20%">
 										<img alt="" src="img/Deals.png" style="width:50%"></td>
-										<td style="width:20%;">
+										<td style="width:20%">
 										<img alt="" src="img/ARCam.png" style="width:50%"></td>
-										<td style="width:20%;">
+										<td style="width:20%">
 										<img alt="" src="img/Essentials.png" style="width:50%"></td>
-										<td style="width:20%;">
+										<td style="width:20%">
 										<img alt="" src="img/Pass.png" style="width:50%"></td>
 									</tr>	
 									<tr align="center" style="font-size:8pt;color:#FFFFFF">
-										<td><span onclick="window.open('SignUp.html','_self')">Discover</span></td>
+										<td>Discover</td>
 										<td>Deals</td>
 										<td>AR.GO</td>
 										<td>Essentials</td>
@@ -99,14 +82,14 @@ table{
 </body>
 <script type="text/javascript">
 T1=document.getElementById("T1"),T2=document.getElementById("T2")
-//localStorage.removeItem("userid")
+localStorage.removeItem("userid")
 
 function jLogin(){	
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			// Typical action to be performed when the document is ready:
-			//alert(this.responseText)
+			//myApp.alert(this.responseText)
 			if (this.responseText==999){
 				alert("Invalid User Name or Password")
 				return false
@@ -115,6 +98,7 @@ function jLogin(){
 			var userid = this.responseText
 			localStorage.setItem("userid",userid);
 			
+			var obj = JSON.parse(this.responseText)
 			window.open("Welcome.html","_self")
 		}
 	}

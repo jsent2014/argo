@@ -1,0 +1,252 @@
+﻿<html>
+<head>
+<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#AAAAAA;
+ 
+  
+}
+
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+select {
+    direction: rtl;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+</style>
+
+</head>
+<body style="margin:0;background-color:#EEEEEE" onload="jInitMe()">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center">
+							<div style="padding:5px;background-color:#FFFFFF">
+								<table style="width:100%">
+									<tr>
+										<td><img id="" alt="" src="img/left.png" style="height:25px" onclick="window.open('Account.html','_self')"></td>
+										<td style="width:100px" align="right" valign="middle">
+											<span style="font-size:10pt" onclick="window.open('Account.html','_self');alert('Record Saved!')">DONE</span>
+										</td>
+									</tr>
+								</table>
+								<div style="margin-top:-25px;padding-bottom:5px"><span style="color:#000000;font-size:11pt">My Details</span></div>
+							</div>
+							<br>
+							<div style="padding:0px;background-color:#FFFFFF">
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">First Name</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T1" name="T1" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Last Name</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T2" name="T2" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Date of Birth</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T3" name="T3" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">City of Residence</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T4" name="T4" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Country of Residence</td>
+										<td style="border-bottom:1px #EEEEEE solid">
+											<select id="T5" name="T5" style="width:100%;border:0;background-color:#FFFFFF;text-align:right;color:#333333;text-align:right;padding-right:5px">
+												<option value="Canada">Canada</option>
+												<option value="China">China</option>
+												<option value="Philippines">Philippines</option>
+											</select>
+										</td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Travel Preferences</td>
+										<td align="right" style="border-bottom:1px #EEEEEE solid"></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:10pt" cellpadding="5" cellspacing="0">
+									<tr>
+										<td style="width:30px" align="center">
+											<img id="C1a" alt="" src="img/unchecked.png" style="width:20px;display:inline" onclick="jToggleCheck('C1')">
+											<img id="C1b" alt="" src="img/checked.png" style="width:20px;display:none" onclick="jToggleCheck('C1')">	
+										</td>
+										<td><span>I usually travel with friends</span></td>
+									</tr>
+									<tr>
+										<td align="center">
+											<img id="C2a" alt="" src="img/unchecked.png" style="width:20px;display:inline" onclick="jToggleCheck('C2')">
+											<img id="C2b" alt="" src="img/checked.png" style="width:20px;display:none" onclick="jToggleCheck('C2')">	
+										</td>
+										<td><span>I usually travel alone</span></td>
+									</tr>
+									<tr>
+										<td align="center">
+											<img id="C3a" alt="" src="img/unchecked.png" style="width:20px;display:none" onclick="jToggleCheck('C3')">
+											<img id="C3b" alt="" src="img/checked.png" style="width:20px;display:inline" onclick="jToggleCheck('C3')">	
+										</td>
+										<td><span>I usually travel with family</span></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Gender</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T6" name="T6" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
+									</tr>
+								</table>
+							</div>
+							<br>
+							<div style="padding:0px;background-color:#FFFFFF">
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Email</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T7" name="T7" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+									</tr>
+								</table>
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Phone Number</td>
+										<td style="border-bottom:1px #EEEEEE solid"><input id="T8" name="T8" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
+									</tr>
+								</table>
+							</div>
+							<br>
+							<div style="padding:0px;background-color:#FFFFFF">
+								<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
+									<tr>
+										<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">My Interest</td>
+										<td align="right" style="border-bottom:1px #EEEEEE solid"><img id="" alt="" src="img/ArrowRIght.png" style="height:20px"></td>
+									</tr>
+								</table>
+							</div>
+							<br><br><br><br>
+							<div class="footer">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:55%"></td>
+									</tr>	
+									<tr align="center" style="font-size:10pt;font-weight:bold;color:#FFFFFF">
+										<td>Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+T1=document.getElementById("T1"),T2=document.getElementById("T2"),T3=document.getElementById("T3"),T4=document.getElementById("T4"),T5=document.getElementById("T5"),
+T6=document.getElementById("T6"),T7=document.getElementById("T7"),T8=document.getElementById("T8")
+
+function jInitMe(){
+	var userid=localStorage.getItem("userid")
+	
+	if(userid!=null){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			
+			if (this.readyState == 4 && this.status == 200) {
+				var obj = JSON.parse(this.responseText)
+				
+				T1.value=obj.FName
+				T2.value=obj.LName
+				T3.value=obj.DOB
+				T4.value=obj.City
+				T5.value=obj.Country
+				T6.value=obj.Gender
+				T7.value=obj.Email
+				T8.value=obj.Phone 
+			}
+		}
+		var URL="http://argo-app.ddns.net/csp/argo/app/MyDetails.csp?" + "id=" + userid
+		xhttp.open("GET", URL, true);
+		xhttp.send();
+
+		
+	}
+	
+	
+}
+
+function jToggleCheck(val){
+	document.getElementById('C1a').style.display='inline'
+	document.getElementById('C2a').style.display='inline'
+	document.getElementById('C3a').style.display='inline'
+	
+	document.getElementById('C1b').style.display='none'
+	document.getElementById('C2b').style.display='none'
+	document.getElementById('C3b').style.display='none'
+	
+	if(document.getElementById(val+'a').style.display=='inline'){
+		document.getElementById(val+'b').style.display='inline'
+		document.getElementById(val+'a').style.display='none'
+	}
+	else{
+		document.getElementById(val+'b').style.display='none'
+		document.getElementById(val+'a').style.display='inline'
+	}
+
+}
+
+</script>
+</html>

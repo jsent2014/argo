@@ -57,17 +57,17 @@ table{
 							<div align="center" style="position:absolute;top:25%;left:25%">
 								<table style="width:200px" cellpadding="10">
 									<tr>
-										<td align="center"><img id="ImgDefault" alt="" src="img/AppUser.png" style="width:90px;display:inline">
-											<img id="ImgAppUser" alt="" src="http://argo-app.ddns.net/csp/argo/photos/client/jsent.jpg" style="width:90px;border-radius: 50px 50px 50px;display:none">
+										<td align="center"><img id="ImgDefault" alt="" src="img/AppUser.png" style="width:90px;display:none">
+											<img id="ImgAppUser" alt="" src="http://argo-app.ddns.net/csp/argo/photos/client/jsent.jpg" style="width:90px;border-radius: 50px 50px 50px;display:inline"  onclick="window.open('home.html','_self')">
 										</td>
 									</tr>
 									<tr>
-										<td align="center"><span id="L1">Good Afternoon!</span></td>
+										<td align="center"><span id="L1"></span></td>
 									</tr>
 									<tr>
 										<td align="center" style="padding-top:0px;color:#666666">Welcome to Singapore!</td>
 									</tr>
-									<tr>
+									<tr style="display:none">
 										<td align="center" style="padding-top:0px">
 											<div id="B1" style="background-color:#FF0E0E;padding:10px;border-radius:5px 5px 5px;color:#FFFFFF;font-size:10pt;display:inline" onclick="window.open('Login.html','_self')">Sign In / Sign Up</div>
 										</td>
@@ -120,7 +120,7 @@ function jInitMe(){
 				
 				document.getElementById("L1").innerHTML = "Good Day " + obj.FName + "!"
 				document.getElementById("ImgAppUser").style.display="inline"
-				document.getElementById("ImgAppUser").src=obj.Photo
+				//document.getElementById("ImgAppUser").src=obj.Photo
 				document.getElementById("B1").style.display="none"
 			}
 		}

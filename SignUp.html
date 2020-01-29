@@ -1,0 +1,194 @@
+﻿<html>
+<head>
+<script src="js/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style type="text/css">
+html {
+	scroll-behavior: smooth;
+	font-family:"Calibri";
+	color:#333333;
+ 
+  
+}
+
+table{
+	 font-size:12pt;	
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #FF0E0E;
+	color: white;
+	text-align: center;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:30px;
+}
+::placeholder {
+  color: #AAAAAA;
+  opacity: 1; /* Firefox */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+</style>
+
+</head>
+<body style="margin:0">
+<table style="width:100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<form id="F1">
+				<table style="width:100%" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<div align="center" style="width:100%;padding-top:40px">
+								<table style="width:80%" cellpadding="3">
+									<tr align="center" style="font-weight:bold;font-size:14pt">
+										<td style="width:40%">Sign in
+										</td>
+										<td style="width:50%"><div style="border-bottom:2px #FF0E0E solid;width:120px;white-space:nowrap">Create Account</div></td>
+									</tr>
+								</table>
+							</div><br><br>
+							<div align="center">
+								<div align="center" style="font-size:12pt">Create Account with</div><br>
+								<table cellpadding="14" style="margin-top:-15px">
+									<tr>
+										<td><img alt="" src="img/fb.png" style="width:40px"></td>
+										<td><img alt="" src="img/google.png" style="width:40px"></td>
+										<td><img alt="" src="img/wechat.png" style="width:40px"></td>
+									</tr>
+								</table>
+								<span style="font-size:12pt">or</span><br><br>
+								<div style="width:55%;background-color:#EEEEEE;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
+									<table style="width:100%;font-weight:bold" cellspacing="0" cellpadding="0">
+										<tr align="center">
+											<td id="B1" style="border-right:1px #DDDDDD solid;padding:10px;width:100px;background:#FFFFFF" onclick="jPhoneEmail('Phone')">PHONE</td>
+											<td id="B2" style="padding:10px;width:100px;color:#666666" onclick="jPhoneEmail('Email')">EMAIL</td>		
+										</tr>		
+									</table>		
+								</div>
+								<br>
+								<div style="width:65%;border-bottom:2px #000000 solid">
+									<table id="Tab1" style="width:100%" cellpadding="0" cellspacing="0">
+										<tr>
+											<td style="width:70px">
+												<select id="T1" name="T1" style="border:0">
+													<option value="+65">SG +65</option>
+													<option value="+63">PH +63</option>
+												</select>
+											</td>
+											<td>
+												<input id="T2" id="T2" type="number" style="width:100%;border:0;padding:5px;padding-left:20px;" placeholder="Phone Number">		
+											</td>		
+										</tr>		
+									</table>	
+									<table id="Tab2" style="width:100%;display:none" cellpadding="0" cellspacing="0">
+										<tr>
+											<td>
+												<input id="T3" name="T3" type="text" style="width:100%;border:0;padding:5px;text-align:center" placeholder="Email Address">		
+											</td>		
+										</tr>		
+									</table>
+								</div><br>
+								<div style="width:70%;font-size:8pt;color:#000000;padding-left:20px" align="left"><span>
+									By signing up, you confirm that you agree our<br>
+									<span style="color:blue">Terms of Use</span> and have read and understood our<br>
+									<span style="color:blue">Privacy Policy.</span> You will receive an SMS to condirm<br>
+									your phone number. SMS fee may apply.
+								</span></div>
+								<br>
+								<div style="background-color:#FF0E0E;padding:12px;border-radius:8px 8px 8px ;color:#FFFFFF;font-size:16pt;width:60%;font-weight:bold" onclick="jSignUp()">Sign Up</div>
+							</div>
+							<br><br><br>
+							<div class="footer">
+								<table style="width:100%">
+									<tr align="center">
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:50%"></td>
+									</tr>	
+									<tr align="center" style="font-size:8pt;color:#FFFFFF">
+										<td>Discover</td>
+										<td>Deals</td>
+										<td>AR.GO</td>
+										<td>Essentials</td>
+										<td>My Trip</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+T1=document.getElementById("T1"),T2=document.getElementById("T2"),T3=document.getElementById("T3")
+localStorage.removeItem("userid")
+
+function jSignUp(){
+	if (T2.value=="" && T3.value==""){
+		alert("Please enter Phone Number or Email Address")
+		return false
+	}
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			// Typical action to be performed when the document is ready:
+			//myApp.alert(this.responseText)
+			if (this.responseText==999){
+				//alert("Invalid User Name or Password")
+				return false
+			}
+			
+			//var obj = JSON.parse(this.responseText)
+			window.open('SignUpDetails.html','_self')		
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/argo/app/SignUp.csp?" + "p=" + T1.value + T2.value + "&e=" + T3.value
+	xhttp.open("GET", URL, true);
+	xhttp.send();
+
+
+	
+}
+
+function jPhoneEmail(val){
+	document.getElementById('B1').style.background='#EEEEEE'
+	document.getElementById('B2').style.background='#EEEEEE'
+	document.getElementById('Tab1').style.display='none'	
+	document.getElementById('Tab2').style.display='none'	
+	if (val=='Phone'){
+		document.getElementById('B1').style.background='#FFFFFF'	
+		document.getElementById('Tab1').style.display='inline'	
+	}
+	if (val=='Email'){
+		document.getElementById('B2').style.background='#FFFFFF'	
+		document.getElementById('Tab2').style.display='inline'	
+	}
+
+}
+</script>
+</html>
