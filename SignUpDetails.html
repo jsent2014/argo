@@ -60,7 +60,7 @@ select {
 							<div align="center" style="width:100%;padding-top:40px">
 								<table style="width:80%" cellpadding="3">
 									<tr align="center" style="font-weight:bold;font-size:14pt">
-										<td style="width:40%">Sign in
+										<td style="width:40%"><span onclick="window.open('Login.html','_self')">Sign in</span>
 										</td>
 										<td style="width:50%"><div style="border-bottom:2px #FF0E0E solid;width:120px;white-space:nowrap">Create Account</div></td>
 									</tr>
@@ -70,13 +70,13 @@ select {
 								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">First Name</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">First Name <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T1" name="T1" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
 										</tr>
 									</table>
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Last Name</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Last Name <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T2" name="T1" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px;text-transform:capitalize" placeholder=""></td>
 										</tr>
 									</table>
@@ -109,13 +109,13 @@ select {
 								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Email</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Email <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T6" name="T6" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
 										</tr>
 									</table>
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Phone Number</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Phone Number <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T7" name="T7" type="text" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
 										</tr>
 									</table>
@@ -124,13 +124,13 @@ select {
 								<div style="width:100%;background-color:#FFFFFF;border-radius:4px 4px 4px ;box-shadow: 1px 3px 5px #CCCCCC;">
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Password</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Password <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T8" name="T8" type="password" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
 										</tr>
 									</table>
 									<table style="width:100%;font-size:9pt;color:#333333" cellpadding="10" cellspacing="0">
 										<tr>
-											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Confirm Password</td>
+											<td style="font-weight:bold;border-bottom:1px #EEEEEE solid;width:50%">Confirm Password <span style="color:red">*</span></td>
 											<td style="border-bottom:1px #EEEEEE solid"><input id="T9" name="T9" type="password" style="width:100%;border:0;text-align:right;color:#333333;padding-right:5px" placeholder=""></td>
 										</tr>
 									</table>
@@ -145,7 +145,7 @@ select {
 								<table style="width:100%">
 									<tr align="center">
 										<td style="width:20%">
-										<img alt="" src="img/Discover.png" style="width:50%"></td>
+										<img alt="" src="img/Discover.png" style="width:50%" onclick="window.open('home.html','_self')"></td>
 										<td style="width:20%">
 										<img alt="" src="img/Deals.png" style="width:50%"></td>
 										<td style="width:20%">
@@ -156,7 +156,7 @@ select {
 										<img alt="" src="img/Pass.png" style="width:50%"></td>
 									</tr>	
 									<tr align="center" style="font-size:8pt;color:#FFFFFF">
-										<td>Discover</td>
+										<td><span onclick="window.open('SignUp.html','_self')">Discover</span></td>
 										<td>Deals</td>
 										<td>AR.GO</td>
 										<td>Essentials</td>
@@ -197,11 +197,36 @@ function jInitMe(){
 }
 
 function jSignUp(){
+	errmsg=""
 	if (T8.value!=T9.value){
 		alert("Password did not match!")
 		return false
 	}
+	if (T1.value=="") errmsg="First Name"
+	if (T2.value==""){
+		if (errmsg!="") errmsg=errmsg + ", "
+		errmsg=errmsg + "Last Name"
+	}
+	if (T6.value==""){
+		if (errmsg!="") errmsg=errmsg + ", "
+		errmsg=errmsg + "Email"
+	}
+	if (T7.value==""){
+		if (errmsg!="") errmsg=errmsg + ", "
+		errmsg=errmsg + "Phone"
+	}
+	if (T8.value==""){
+		if (errmsg!="") errmsg=errmsg + ", "
+		errmsg=errmsg + "Password"
+	}
+
+
+	if (errmsg!=""){
+		alert("The following fields are required: " + errmsg)
+		return false
+	}	
 	
+
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
