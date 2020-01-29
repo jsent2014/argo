@@ -1,0 +1,13 @@
+﻿<script language="cache" runat="server">	
+	s d1=$g(%request.Data("d1",1))	
+	i d1="PopEarn" d PopEarn^cAppDealsList
+	i d1="PopAttractions" d PopAttractions^cAppDealsList
+	i d1="PopFood" d PopFood^cAppDealsList
+	i d1="PopPhotos" d PopPhotos^cAppDealsList
+</script>
+
+#(rtn)#
+
+
+
+
