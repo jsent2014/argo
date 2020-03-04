@@ -4,11 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style type="text/css">
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/SegoeUI.ttf);
+}
+
 html {
-	scroll-behavior: smooth;
-	font-family:Helvetica, sans-serif;
-	color:#333333;
- 
+  scroll-behavior: smooth;
+  font-family:myFirstFont;
+  color:#333333;
   
 }
 
@@ -31,16 +35,18 @@ table{
 
 .boxItem {
 	width:150px;
-	height:100px;
+	height:150px;
 	background-color:#999999;
-	border-radius: 5px 5px 5px ;
+	border-radius: 10px 10px 10px;
 }
 
 .boxItem2 {
 	width:350px;
 	height:180px;
-	background-color:#CCCCCC;
+	background-color:#FFFFFF;
 	border-radius: 5px 5px 5px ;
+	box-shadow: 3px 3px 4px 3px #999999;
+	padding:10px;
 }
 
 .boxItem3 {
@@ -48,6 +54,18 @@ table{
 	height:130px;
 	background-color:#CCCCCC;
 	border-radius: 5px 5px 5px ;
+}
+
+.review{
+	color:#000000;
+	font-size:14pt;
+}
+
+.EntryText{
+	color:#FFFFFF;
+	font-size:10pt;
+	font-weight:bold;
+	text-shadow: 1px 1px #333333;
 }
 
 </style>
@@ -61,39 +79,33 @@ table{
 				<table style="width:100%" cellspacing="0" cellpadding="0">
 					<tr>
 						<td align="center">
-							<div style="padding:10px">
-								<table style="width:100%" cellpadding="0" cellspacing="0">
+							<div style="width:100%;padding:5px;position:fixed;background:#FFFFFF;top:0px;left:0px">
+								<table style="width:95%;background:#FFFFFF" cellpadding="0" cellspacing="0">
 									<tr>
-										<td style="width:80px"><img alt="" src="img/left.png" style="height:25px;margin-left:-10px">								
+										<td style="width:80px"><img alt="" src="img/left.png" style="height:25px;margin-left:-10px" onclick="window.history.back();">								
 										</td>
 										<td align="center"><span id="L1"></span>											
 										</td>
 										<td style="width:20%" align="right" valign="middle">
 											<img alt="" src="img/cart1.png" style="width:25px">
-											<img alt="" src="img/user1.png" style="width:24px" onclick="window.open('Welcome.html','_self')">
+											<img alt="" src="img/user1.png" style="width:24px" onclick="window.open('Account.html','_self')">
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div align="center">
-								<img id="img1" alt="" src="img/noimage.png" style="width:99%;height:300px;z-index:-1;position:relative; left: 0px; top: 0px;">
+								<img id="img1" alt="" src="img/noimage.png" style="width:100%;height:300px;margin-top:30px;z-index:-1;position:relative; left: 0px; top: 0px;">
 								<table style="width:95%;margin-top:-50px">
 									<tr>
 										<td><img alt="" src="img/heart3.png" style="width:30px"> <img alt="" src="img/share2.png" style="width:30px"></td>
 										<td></td>
 										<td style="width:40%">
-											<div style="background-color:#009999;font-weight:bold;color:#FFFFFF;padding:10px;border-radius:3px 3px 3px" align="center">Get Directions</div>
+											<div style="background-color:#009999;font-weight:bold;color:#FFFFFF;font-size:10pt;padding:10px;border-radius:3px 3px 3px" align="center">Get Directions</div>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<div align="center" style="margin-top:5px">
-								<table style="width:95%;color:#000000;font-size:12pt">
-									<tr>
-										<td>See people around the world who have been there</td>
-										<td align="right"><img alt="" src="img/next.png" style="width:20px;vertical-align:middle"></td>
-									</tr>
-								</table>
 								<div style="width:410px;overflow-x:scroll;display:none">
 									<table cellspacing="5" style="width:600px">
 										<tr>
@@ -105,36 +117,33 @@ table{
 									</table>
 								</div>
 							</div>
-							<div align="center" style="margin-top:5px">
+							<div align="center" style="margin-top:10px">
 								<table style="width:95%" cellpadding="3" cellspacing="0">
 									<tr>
-										<td><span id="L2" style="font-size:10pt;color:#FF0E0E"></span></td>
-										<td align="right" style="width:40%"><img alt="" src="img/4AStar.png" style="height:15px"></td>
+										<td><span id="L2" style="font-size:8pt;color:#FF0E0E"></span></td>
+										<td style="width:30%;font-size:8pt;"><img alt="" src="img/Star1.png" style="width:12px"> <span id="L7" style="color:#FF2626;vertical-align:middle">4.0</span> <span id="L8">(2,000 Reviews)</span></td>
+										<td style="width:30%"><img alt="" src="img/users.png" style="width:18px;vertical-align:middle"> <span id="L9" style="font-size:10pt;vertical-align:middle">100K+ Booked</span></td>
 									</tr>
 									<tr>
-										<td><span id="L3" style="font-weight:bold;font-size:20pt"></span></td>
-										<td align="right"><img alt="" src="img/call.png" style="width:30px"></td>
-									</tr>
-									<tr style="font-size:10pt;display:none">
-										<td>
-											<div id="L4" style="padding-bottom:5px"><span> Floor 01, Unit 43/44, Block 26, Sentosa Gateway, , 098138</span></div>
-											<div><span style="color:#00CC99">Open today:</span> <span>10:00 AM - 09:00 PM</span></div>
-										</td>
-										<td></td>
+										<td colspan="3" align="center"><span id="L3" style="font-weight:bold;font-size:22pt"></span></td>
 									</tr>
 								</table>
 							</div>
-							<hr style="border-top:1px #FF0E0E solid; width:95%">
-							<div id="L5" style="width:95%" align="left">
+							<div align="left" style="width:95%;font-size:8pt;margin-top:10px">
+								<div style="padding-bottom:5px"><img alt="" src="img/map1.png" style="height:20px;vertical-align:middle"><span id="L4" style="vertical-align:middle"> </span></div>
+								<div style="display:none"><span style="color:#00CC99">Open today:</span> <span style="display:none">10:00 AM - 09:00 PM</span></div>
 							</div>
+							<hr style="border-top:1px #FF0E0E solid; width:95%">
+							<div align="left"style="width:95%"><span style="font-weight:bold;font-size:16pt">What to Expect</span></div>
+							<div id="L5" style="width:95%" align="left"></div>
 							<hr style="border-top:1px #FF0E0E solid; width:95%">
 							<div style="width:95%" align="left">
 								<table style="width:100%;font-size:14pt;margin-top:10px">
 									<tr>
-										<td><span style="font-weight:bold;font-size:20pt">Earn</span></td>
+										<td><span style="font-weight:bold;font-size:16pt">Earn</span></td>
 										<td style="width:80px" align="right">
-											<img alt="" id="TogImg1a" src="img/up.png" style="width:30px;display:none">
-											<img alt="" id="TogImg1b" src="img/down.png" style="width:30px;display:inline">
+											<img alt="" id="TogImg1a" src="img/up.png" style="width:24px;display:none">
+											<img alt="" id="TogImg1b" src="img/down.png" style="width:24px;display:inline">
 										</td>
 									</tr>
 								</table>
@@ -143,73 +152,58 @@ table{
 							<div style="width:95%" align="left">
 								<table style="width:100%;font-size:14pt;margin-top:10px">
 									<tr>
-										<td><span style="font-weight:bold;font-size:20pt">Deals</span></td>
+										<td><span style="font-weight:bold;font-size:16pt">Deals</span></td>
 										<td style="width:80px" align="right">
-											<img alt="" id="TogImg1a" src="img/up.png" style="width:30px;display:none">
-											<img alt="" id="TogImg1b" src="img/down.png" style="width:30px;display:inline">
+											<img alt="" id="TogImg1a" src="img/up.png" style="width:24px;display:none">
+											<img alt="" id="TogImg1b" src="img/down.png" style="width:24px;display:inline">
 										</td>
 									</tr>
 								</table>
 							</div>
 							<hr style="border-top:1px #FF0E0E solid; width:95%">
 							<div style="width:95%" align="left">
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<div style="display:none"><span id="L6" style="font-weight:bold;font-size:26pt"></span>&nbsp;<span style="font-size:14pt;color:#666666"> out of 5</span><br></div>
+								<div><span style="font-weight:bold;font-size:16pt">Reviews</span></div>
+								<table style="width:100%">
 									<tr>
-										<td><span style="font-weight:bold;font-size:20pt">Upcoming Events</span></td>
-										<td style="width:80px" align="right">
-											<img alt="" id="TogImg1a" src="img/up.png" style="width:30px;display:none">
-											<img alt="" id="TogImg1b" src="img/down.png" style="width:30px;display:inline">
-										</td>
+										<td style="width:50%"><div id="DivAve"></div></td>
+										<td align="right"><span style="color:red">Write a Review</span></td>
 									</tr>
 								</table>
-							</div>
-							<hr style="border-top:1px #FF0E0E solid; width:95%">
-							<div style="width:95%" align="left">
-								<span id="L6" style="font-weight:bold;font-size:36pt"></span>&nbsp;<span style="font-size:16pt;color:#666666"> out of 5</span><br>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="5" style="width:1200px">
-										<tr>
-											<td class="boxItem2"></td>
-											<td class="boxItem2"></td>
-											<td class="boxItem2"></td>
-											<td class="boxItem2"></td>
-										</tr>
-									</table>
+								<div id="DivReview" style="width:400px;overflow-x:scroll;margin-top:-10px">
+									
 								</div>
 							</div>
-							<hr style="border-top:1px #FF0E0E solid; width:95%"><br><br>
+							<hr style="border-top:1px #FF0E0E solid; width:95%">
 							<div style="width:95%" align="left">
-								<span style="font-weight:bold;font-size:20pt">You may also like this</span><br>
-								<div style="width:410px;overflow-x:scroll">
-									<table cellspacing="10" style="width:700px">
-										<tr>
-											<td class="boxItem3"></td>
-											<td class="boxItem3"></td>
-											<td class="boxItem3"></td>
-											<td class="boxItem3"></td>
-										</tr>
-									</table>
+								<span style="font-weight:bold;font-size:16pt">You may also like this</span><br>
+								<div id="DivSimilar" style="width:400px;overflow-x:scroll">
+									
 								</div>
 							</div>
-							<br><br><br><br><br><br>
+							<br><br><br><br>
 							<div class="footer">
 								<table style="width:100%">
 									<tr align="center">
-										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%"></td>
-										<td style="width:20%"><img alt="" src="img/Deals.png" style="width:55%"></td>
-										<td style="width:20%"><a href="#" id="open-file-uploader"><img alt="" src="img/ARCam.png" style="width:55%"></a></td>
-										<td style="width:20%"><img alt="" src="img/Essentials.png" style="width:55%"></td>
-										<td style="width:20%"><img alt="" src="img/Pass.png" style="width:55%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Discover.png" style="width:50%" onclick="window.open('home.html','_self')"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Deals.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/ARCam.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Essentials.png" style="width:50%"></td>
+										<td style="width:20%">
+										<img alt="" src="img/Pass.png" style="width:50%"></td>
 									</tr>	
-									<tr align="center" style="font-size:10pt;font-weight:bold;color:FFFFFF">
-										<td style="color:#000000">Discover</td>
+									<tr align="center" style="font-size:8pt;color:#FFFFFF">
+										<td><span onclick="window.open('home.html','_self')">Discover</span></td>
 										<td>Deals</td>
 										<td>AR.GO</td>
 										<td>Essentials</td>
 										<td>My Trip</td>
 									</tr>
 								</table>
-								<input id="Cam1" type="file" accept="image/*" capture="camera" style="display:none">
 							</div>
 						</td>
 					</tr>
@@ -222,6 +216,13 @@ table{
 <script type="text/javascript">
 
 function jInitMe(){
+	
+	jPopRec()
+	jPopReview()
+	jPopSimilar()
+}
+
+function jPopRec(){
 	var refno=localStorage.getItem("poidetails")
 	
 	var xhttp = new XMLHttpRequest();
@@ -231,22 +232,55 @@ function jInitMe(){
 			
 			var obj = JSON.parse(this.responseText)
 			//alert(this.responseText)
-			document.getElementById("L1").innerHTML=obj.Name
+			document.getElementById("L1").innerHTML=obj.Header
 			document.getElementById("L2").innerHTML=obj.Category
 			document.getElementById("L3").innerHTML=obj.Name
 			document.getElementById("L4").innerHTML=obj.Address
 			document.getElementById("L5").innerHTML=obj.Body
-			document.getElementById("L6").innerHTML=obj.Rating
+			document.getElementById("L7").innerHTML=obj.Rating
 			document.getElementById("img1").src=obj.Photo
 			
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/POIDetails.csp?" + "id=" + refno
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/POIDetails.csp?" + "id=" + refno
 	xhttp.open("GET", URL, true);
 	xhttp.send();
+	
 
-	
-	
 }
+
+
+function jPopReview(){
+	var refno=localStorage.getItem("poidetails")
+	
+	var xhttp2= new XMLHttpRequest();
+	xhttp2.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			
+			var rec = this.responseText.split('||');
+			document.getElementById("DivReview").innerHTML=rec[0]
+			document.getElementById("DivAve").innerHTML=rec[1]
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/POIReview.csp?" + "id=" + refno
+	xhttp2.open("GET", URL, true);
+	xhttp2.send();
+}
+
+function jPopSimilar(){
+	var refno=localStorage.getItem("poidetails")
+	
+	var xhttp3= new XMLHttpRequest();
+	xhttp3.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("DivSimilar").innerHTML=this.responseText
+		}
+	}
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/POISimilar.csp?" + "id=" + refno
+	xhttp3.open("GET", URL, true);
+	xhttp3.send();
+}
+
+
 </script>
 </html>

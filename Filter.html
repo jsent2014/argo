@@ -13,7 +13,7 @@ html {
 }
 
 table{
-	 font-size:16pt;	
+	 font-size:13pt;	
 
 }
 .boxItem {
@@ -46,28 +46,30 @@ table{
 				<table style="width:100%" cellspacing="0">
 					<tr>
 						<td>
-							<div style="padding:10px">
+							<div style="padding:20px; box-shadow: 5px -1px 8px #CCCCCC;" align="center">
 								<table style="width:100%" cellpadding="0" cellspacing="0">
 									<tr>
-										<td style="width:30%"><img alt="" style="width:20px" src="img/close.png" onclick="window.open('index.html','_self')"></td>
-										<td align="center" style="width:40%;color:#000000">Filter</td>
-										<td align="right" style="color:#FF0E0E;width:30%">Clear</td>
+										<td style="width:40%"><img alt="" style="width:20px" src="img/close.png" onclick="window.history.back()"></td>
+										<td align="center" style="color:#000000" >Filter</td>
+										<td style="color:#FF0E0E;width:40%;padding-right:5px" align="right"><span style="text-decoration:underline">Clear all filters</span></td>
 									</tr>
 								</table>
-								<br>
-								<table style="width:100%">
-									<tr>
-										<td align="center">
-											<input type="text" style="border-radius: 3px 3px 3px;font-size:16pt;width:100%;padding:8px;background-color:#EEEEEE;border:none;padding-left:50px" placeholder="Search">
-											<img alt="" src="img/search.png" style="width:35px;position:absolute;top:64px;left:25px">
-										</td>
+							</div>
+							<br>
+							<div align="center">
+								<table style="width:95%;font-weight:bold;color:#999999;font-size:14pt" cellspacing="0" cellpadding="0">
+									<tr align="center">
+										<td style="border-right:1px #999999 solid;color:#FF0E0E">Activities</td>
+										<td style="border-right:1px #999999 solid">Deals</td>
+										<td style="border-right:1px #999999 solid">Hotels</td>
+										<td>Articles</td>
 									</tr>
 								</table>
 							</div>
 							<br>
 							<div style="padding:10px">
 								<span style="font-weight:bold">Categories</span>
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
 										<td style="width:40px"><img alt="" src="img/notAll.png" style="width:30px"></td>
 										<td>Attractions &amp; Shows</td>
@@ -79,12 +81,12 @@ table{
 								</table>
 							</div>
 							<div id="CatDiv1" style="background-color:#EEEEEE">
-								<table style="width:100%;font-size:14pt;margin-top:10px" cellpadding="10" cellspacing="0">
+								<table style="width:100%;font-size:11pt;margin-top:10px" cellpadding="10" cellspacing="0">
 									<tr>
 										<td style="width:20px"></td>
 										<td style="width:30px;border-bottom:1px #CCCCCC solid;padding-left:0px">
-											<img id="C2a" alt="" src="img/unchecked.png" style="width:30px;display:none" onclick="jToggleCheck('C2')">
-											<img id="C2b" alt="" src="img/checked.png" style="width:30px;display:inline" onclick="jToggleCheck('C2')">
+											<img id="C2a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C2')">
+											<img id="C2b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C2')">
 										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Theme Parks</td>
 									</tr>
@@ -139,26 +141,30 @@ table{
 								</table>
 							</div>	
 							<div style="padding:10px;padding-top:0px;padding-bottom:0px">
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
-										<td style="width:40px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="width:40px;padding-left:0px">
+											<img id="C9a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C9')">
+											<img id="C9b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C9')">										
+										</td>
 										<td>Food &amp; Beverages</td>
-										<td style="width:80px" align="right"><img alt="" src="img/down.png" style="width:30px"></td>
 									</tr>
 								</table>
 							</div>		
 							<div style="padding:10px;padding-top:0px;padding-bottom:0px">
 
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
-										<td style="width:40px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="width:40px;padding-left:0px">
+											<img id="C10a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C10')">
+											<img id="C10b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C10')">										
+										</td>
 										<td>Bar &amp; Clubs</td>
-										<td style="width:80px" align="right"><img alt="" src="img/down.png" style="width:30px"></td>
 									</tr>
 								</table>
 							</div>	
 							<div style="padding:10px;padding-top:0px;padding-bottom:0px">
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
 										<td style="width:40px"><img alt="" src="img/notAll.png" style="width:30px"></td>
 										<td>Tours &amp; Sightseeing</td>
@@ -170,57 +176,83 @@ table{
 								</table>
 							</div>		
 							<div id="CatDiv4" style="background-color:#EEEEEE">
-								<table style="width:100%;font-size:14pt;margin-top:10px" cellpadding="10" cellspacing="0">
+								<table style="width:100%;font-size:11pt;margin-top:10px" cellpadding="10" cellspacing="0">
 									<tr>
 										<td style="width:20px"></td>
-										<td style="width:30px;border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C11a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C11')">
+											<img id="C11b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C11')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Guided Food Tours</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/checked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C12a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C12')">
+											<img id="C12b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C12')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Walking Tour</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C13a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C13')">
+											<img id="C13b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C13')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Local Sightseeing</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/checked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C14a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C14')">
+											<img id="C14b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C14')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Nature Escapes</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C15a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C15')">
+											<img id="C15b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C15')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Art &amp; Culture</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C16a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C16')">
+											<img id="C16b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C16')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Air &amp; Cruise Tours</td>
 									</tr>
 									<tr>
 										<td style=""></td>
-										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="border-bottom:1px #CCCCCC solid;padding-left:0px">
+											<img id="C17a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C17')">
+											<img id="C17b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C17')">										
+										</td>
 										<td style="border-bottom:1px #CCCCCC solid">Beyond the City</td>
 									</tr>
 								</table>
 							</div>		
 							<div style="padding:10px;padding-top:0px;padding-bottom:0px">
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
-										<td style="width:40px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
-										<td>Activities &amp; Experiences</td>
+										<td style="width:40px;padding-left:0px">
+											<img id="C18a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C18')">
+											<img id="C18b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C18')">										
+										</td><td>Activities &amp; Experiences</td>
 										<td style="width:80px" align="right"><img alt="" src="img/down.png" style="width:30px"></td>
 									</tr>
 								</table>
 							</div>	
 							<div style="padding:10px;padding-top:0px;padding-bottom:0px;border-bottom:1px #CCCCCC solid">
-								<table style="width:100%;font-size:14pt;margin-top:10px">
+								<table style="width:100%;font-size:11pt;margin-top:10px">
 									<tr>
-										<td style="width:40px"><img alt="" src="img/unchecked.png" style="width:30px"></td>
+										<td style="width:40px;padding-left:0px">
+											<img id="C19a" alt="" src="img/unchecked.png" style="width:30px;display:inline" onclick="jToggleCheck('C19')">
+											<img id="C19b" alt="" src="img/checked.png" style="width:30px;display:none" onclick="jToggleCheck('C19')">										
+										</td>
 										<td>Transport &amp; Travel Services</td>
 										<td style="width:80px" align="right"><img alt="" src="img/down.png" style="width:30px"></td>
 									</tr>
@@ -242,7 +274,7 @@ table{
 							<div align="center" style="padding:10px">
 								<table style="width:100%;background-color:#FF4040;border-radius:5px 5px 5px" cellpadding="15">
 									<tr>
-										<td align="center"><span style="font-weight:bold;color:#FFFFFF" onclick="window.open('DiscoverList.html','_self')">APPLY</span></td>
+										<td align="center"><span style="font-weight:bold;color:#FFFFFF" onclick="jApplySearch()">APPLY</span></td>
 									</tr>
 								</table>
 							</div>
@@ -251,18 +283,18 @@ table{
 								<table style="width:100%">
 									<tr align="center">
 										<td style="width:20%">
-										<img alt="" src="img/Discover1.png" style="width:55%"></td>
+										<img alt="" src="img/Discover.png" style="width:50%" onclick="window.open('home.html','_self')"></td>
 										<td style="width:20%">
-										<img alt="" src="img/Deals.png" style="width:55%"></td>
+										<img alt="" src="img/Deals.png" style="width:50%"></td>
 										<td style="width:20%">
-										<img alt="" src="img/ARCam.png" style="width:55%"></td>
+										<img alt="" src="img/ARCam.png" style="width:50%"></td>
 										<td style="width:20%">
-										<img alt="" src="img/Essentials.png" style="width:55%"></td>
+										<img alt="" src="img/Essentials.png" style="width:50%"></td>
 										<td style="width:20%">
-										<img alt="" src="img/Pass.png" style="width:55%"></td>
+										<img alt="" src="img/Pass.png" style="width:50%"></td>
 									</tr>	
-									<tr align="center" style="font-size:10pt;font-weight:bold;color:#FFFFFF">
-										<td style="color:#000000">Discover</td>
+									<tr align="center" style="font-size:8pt;color:#FFFFFF">
+										<td><span onclick="window.open('home.html','_self')">Discover</span></td>
 										<td>Deals</td>
 										<td>AR.GO</td>
 										<td>Essentials</td>
@@ -279,6 +311,9 @@ table{
 </table>
 </body>
 <script type="text/javascript">
+var SearchCat=""
+
+
 function jToggleCatDiv(val1,val2){
 	$('#'+val1).slideToggle(200);
 	
@@ -297,15 +332,64 @@ function jToggleCheck(val){
 	if(document.getElementById(val+'a').style.display=='inline'){
 		document.getElementById(val+'b').style.display='inline'
 		document.getElementById(val+'a').style.display='none'
+		
+		if (val=='C2'){SearchVal='Theme Parks'}
+		if (val=='C3'){SearchVal='Exhibits and Installations'}
+		if (val=='C4'){SearchVal='Festivals and Concerts'}
+		if (val=='C5'){SearchVal='Zoo,Aquarium'}
+		if (val=='C6'){SearchVal='Shows and Performances'}
+		if (val=='C7'){SearchVal='Popular Attraction'}
+		if (val=='C8'){SearchVal='Museums,Galleries'}
+		if (val=='C9'){SearchVal='Food and Beverages'}
+		if (val=='C10'){SearchVal='Bar and Clubs'}
+		if (val=='C11'){SearchVal='Guided Food Tour'}
+		if (val=='C12'){SearchVal='Walking Tour'}
+		if (val=='C13'){SearchVal='Local Sightseeing'}
+		if (val=='C14'){SearchVal='Nature Excapes'}
+		if (val=='C15'){SearchVal='Art,Culture'}
+		if (val=='C16'){SearchVal='Air and Cruise Tours'}
+		if (val=='C17'){SearchVal='Beyond the City'}
+		if (val=='C18'){SearchVal='Activities'}
+		if (val=='C19'){SearchVal='Transport and Travel Services'}
+		
+		SearchCat=SearchCat+","+SearchVal
+		
 	}
 	else{
 		document.getElementById(val+'b').style.display='none'
 		document.getElementById(val+'a').style.display='inline'
-	}
+		
+		if (val=='C2'){SearchVal='Theme Parks'}
+		if (val=='C3'){SearchVal='Exhibits and Installations'}
+		if (val=='C4'){SearchVal='Festivals and Concerts'}
+		if (val=='C5'){SearchVal='Zoo and Aquarium'}
+		if (val=='C6'){SearchVal='Shows and Performances'}
+		if (val=='C7'){SearchVal='Popular Attraction'}
+		if (val=='C8'){SearchVal='Museums and Galleries'}
+		if (val=='C9'){SearchVal='Food and Beverages'}
+		if (val=='C10'){SearchVal='Bar and Clubs'}
+		if (val=='C11'){SearchVal='Guided Food Tour'}
+		if (val=='C12'){SearchVal='Walking Tour'}
+		if (val=='C13'){SearchVal='Local Sightseeing'}
+		if (val=='C14'){SearchVal='Nature Excapes'}
+		if (val=='C15'){SearchVal='Art and Culture'}
+		if (val=='C16'){SearchVal='Air and Cruise Tours'}
+		if (val=='C17'){SearchVal='Beyond the City'}
+		if (val=='C18'){SearchVal='Activities'}
+		if (val=='C19'){SearchVal='Transport and Travel Services'}
 
+		SearchCat= SearchCat.replace(','+SearchVal,'')
+	
+	}
+	
+	
+	
 }
 	
-	
+function jApplySearch(){
+	localStorage.setItem("SearchCat",SearchCat);
+	window.open("DiscoverList.html","_self")
+}
 
 </script>
 </html>

@@ -1,14 +1,18 @@
-﻿<html>
+<html>
 <head>
 <script src="js/jquery.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style type="text/css">
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/SegoeUI.ttf);
+}
+
 html {
-	scroll-behavior: smooth;
-	font-family:"Calibri";
-	color:#333333;
- 
+  scroll-behavior: smooth;
+  font-family:myFirstFont;
+  color:#333333;
   
 }
 
@@ -127,7 +131,7 @@ button:focus {
 										<img alt="" src="img/Pass.png" style="width:50%"></td>
 									</tr>	
 									<tr align="center" style="font-size:8pt;color:#FFFFFF">
-										<td><span onclick="window.open('SignUp.html','_self')">Discover</span></td>
+										<td><span onclick="window.open('home.html','_self')">Discover</span></td>
 										<td>Deals</td>
 										<td>AR.GO</td>
 										<td>Essentials</td>
@@ -167,7 +171,7 @@ function jSignUp(){
 			window.open('SignUpDetails.html','_self')		
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/SignUp.csp?" + "p=" + T1.value + T2.value + "&e=" + T3.value
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/SignUp.csp?" + "p=" + T1.value + T2.value + "&e=" + T3.value
 	xhttp.open("GET", URL, true);
 	xhttp.send();
 

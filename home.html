@@ -1,15 +1,21 @@
-﻿<html>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <script src="cordova.js"></script>
 
 <style type="text/css">
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/SegoeUI.ttf);
+}
+
 html {
   scroll-behavior: smooth;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:myFirstFont;
   color:#FFFFFF;
   
 }
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -105,12 +111,12 @@ html {
 				<table style="width:100%" cellpadding="0" cellspacing="0">
 					<tr>
 						<td>
-							<div style="padding:5px;margin-top:10px">
+							<div style="padding:5px;margin-top:5px">
 								<table style="width:100%">
 									<tr>
 										<td><br>
-											<div style="position:relative;z-index:1"><input type="text" style="margin-top:-29px;border-radius: 3px 3px 3px;font-size:12pt;width:100%;padding:8px;opacity:0.6;border:none;padding-left:30px" placeholder="Search by destination..."></div>
-											<div style="margin-top:-30px;position:relative;z-index:2"><img alt="" src="img/search.png" style="width:25px;padding-left:5px" onclick="window.open('MapSearch.html','_self')"></div>
+											<div style="position:relative;z-index:1"><input id="T1" type="text" style="margin-top:-29px;border-radius: 3px 3px 3px;font-size:12pt;width:100%;padding:8px;opacity:0.7;border:none;padding-left:30px" placeholder="Search by destination or activity"></div>
+											<div style="margin-top:-30px;position:relative;z-index:2;width:30px"><img alt="" src="img/search.png" style="width:25px;padding-left:5px" onclick="jSearch()"></div>
 										</td>
 										<td style="width:20%" align="center">
 											<div style="position:relative"><img alt="" src="img/cart.png" style="width:25px">
@@ -158,79 +164,79 @@ html {
 								</table>
 							</div><br>
 							<div align="center">
-								<table style="width:99%;color:#000000;font-weight:bolder;font-size:12pt">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Upcoming Events</td>
 										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div id="DivEvents" style="width:400px;overflow-x:scroll">
+								<div id="DivEvents" style="width:400px;overflow-x:scroll;margin-top:-20px">
 									
 								</div>
 							</div>
-							<div align="center">
-								<table style="width:99%;color:#000000;font-weight:bold;font-size:12pt">
+							<div align="center" style="display:none">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Hot Deals</td>
-										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
+										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle" onclick="window.open('DealsList.html','_self')">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle" onclick="window.open('DealsList.html','_self')"></td>
 									</tr>
 								</table>
-								<div id="DivDeals" style="width:400px;overflow-x:scroll">
+								<div id="DivDeals" style="width:400px;overflow-x:scroll;margin-top:-20px">
 									
 								</div>
 							</div>
 							<div align="center">
-								<table style="width:99%;color:#000000;font-weight:bold;font-size:12pt">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Top Attractions</td>
-										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
+										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle" onclick="jSeeAll('Attractions')">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle" onclick="jSeeAll('Attractions')"></td>
 									</tr>
 								</table>
-								<div id="DivAttractions" style="width:400px;overflow-x:scroll">
+								<div id="DivAttractions" style="width:400px;overflow-x:scroll;margin-top:-20px">
 								</div>
 							</div>
-							<div align="center">
-								<table style="width:99%;color:#000000;font-weight:bold;font-size:12pt">
+							<div align="center" style="display:none">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Earned Coupons</td>
-										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
+										<td align="right"><span style="text-decoration:underline;vertical-align:middle;font-size:12pt">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div id="DivCoupon" style="width:400px;overflow-x:scroll">
+								<div id="DivCoupon" style="width:400px;overflow-x:scroll;margin-top:-20px">
 								</div>
 							</div>
 							<div align="center">
-								<table style="width:99%;color:#000000;font-weight:bold;font-size:12pt">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Favourite Food</td>
-										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
+										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle;" onclick="jSeeAll('Food and Beverages')">See all</span> <img alt="" src="img/next.png" style="width:15px;vertical-align:middle" onclick="jSeeAll('Food and Beverages')"></td>
 									</tr>
 								</table>
-								<div id="DivFood" style="width:400px;overflow-x:scroll">
+								<div id="DivFood" style="width:400px;overflow-x:scroll;margin-top:-20px">
 								</div>
 							</div>
-							<div align="center" onclick="window.open('Attraction.html','_self')">
-								<table style="width:99%;color:#000000;font-weight:bold;font-size:12pt">
+							<div align="center" style="display:none">
+								<table style="width:99%;color:#000000;font-weight:bold;font-size:16pt">
 									<tr>
 										<td>Articles</td>
 										<td align="right" style="font-size:9pt"><span style="text-decoration:underline;vertical-align:middle">See all</span><img alt="" src="img/next.png" style="width:15px;vertical-align:middle"></td>
 									</tr>
 								</table>
-								<div id="DivArticles" style="width:400px;overflow-x:scroll">
+								<div id="DivArticles" style="width:400px;overflow-x:scroll;margin-top:-20px">
 								</div>
 							</div>
 							<br><br><br><br>
 							<div class="footer">
 								<table style="width:100%">
 									<tr align="center">
-										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%" onclick="window.open('DiscoverList.html','_self')"></td>
+										<td style="width:20%"><img alt="" src="img/Discover1.png" style="width:55%" onclick="window.open('home.html','_self')"></td>
 										<td style="width:20%"><img alt="" src="img/Deals.png" style="width:55%" onclick="window.open('DealsList.html','_self')"></td>
 										<td style="width:20%"><a href="#" id="open-file-uploader"><img alt="" src="img/ARCam.png" style="width:55%"></a></td>
 										<td style="width:20%"><img alt="" src="img/Essentials.png" style="width:55%"></td>
 										<td style="width:20%"><img alt="" src="img/Pass.png" style="width:55%"></td>
 									</tr>	
 									<tr align="center" style="font-size:10pt;font-weight:bold">
-										<td style="color:#000000" onclick="window.open('DiscoverList.html','_self')">Discover</td>
+										<td style="color:#000000" onclick="window.open('home.html','_self')">Discover</td>
 										<td>Deals</td>
 										<td onclick="window.open('ARCam.html','_self')">AR.GO</td>
 										<td>Essentials</td>
@@ -248,6 +254,7 @@ html {
 </table>
 </body>
 <script type="text/javascript">
+T1= document.getElementById("T1")
 
 var slideIndex = 0;
 showSlides();
@@ -279,7 +286,7 @@ function jPopEvents(){
 			document.getElementById("DivEvents").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopEvents"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopEvents"
 	xhttp1.open("GET", URL, true);
 	xhttp1.send();
 }
@@ -291,7 +298,7 @@ function jPopAttractions(){
 			document.getElementById("DivAttractions").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopAttractions"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopAttractions"
 	xhttp2.open("GET", URL, true);
 	xhttp2.send();
 }
@@ -303,7 +310,7 @@ function jPopCoupon(){
 			document.getElementById("DivCoupon").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopCoupon"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopCoupon"
 	xhttp2.open("GET", URL, true);
 	xhttp2.send();
 }
@@ -317,7 +324,7 @@ function jPopFood(){
 			document.getElementById("DivFood").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopFood"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopFood"
 	xhttp3.open("GET", URL, true);
 	xhttp3.send();
 }
@@ -329,7 +336,7 @@ function jPopPhotos(){
 			document.getElementById("DivPhotos").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopPhotos"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopPhotos"
 	xhttp4.open("GET", URL, true);
 	xhttp4.send();
 }
@@ -341,7 +348,7 @@ function jPopEvents(){
 			document.getElementById("DivEvents").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopEvents"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopEvents"
 	xhttp5.open("GET", URL, true);
 	xhttp5.send();
 }
@@ -353,7 +360,7 @@ function jPopDeals(){
 			document.getElementById("DivDeals").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopDeals"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopDeals"
 	xhttp5.open("GET", URL, true);
 	xhttp5.send();
 }
@@ -365,7 +372,7 @@ function jPopAttractions(){
 			document.getElementById("DivAttractions").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopAttractions"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopAttractions"
 	xhttp5.open("GET", URL, true);
 	xhttp5.send();
 }
@@ -379,10 +386,25 @@ function jPopArticles(){
 			document.getElementById("DivArticles").innerHTML=this.responseText
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/Index.csp?d1=PopArticles"
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/Index.csp?d1=PopArticles"
 	xhttp6.open("GET", URL, true);
 	xhttp6.send();
 }
+
+function jSeeAll(val){
+	var SearchCat=val
+	localStorage.setItem("SearchCat",SearchCat);
+	window.open("POIList.html","_self")
+
+}
+
+function jSearch(){
+	var SearchCat=T1.value
+	localStorage.setItem("SearchCat",SearchCat);
+	window.open("POIList.html","_self")
+
+}
+
 
 
 </script>

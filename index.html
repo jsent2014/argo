@@ -1,11 +1,12 @@
-﻿<html>
+<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="cordova.js"></script>
 
 </head>
 <body>
 <div align="center">
-	<img alt="" src="img/logo.jpg" style="width:85%;margin-top:70%" onclick="jSignIn()">
+	<img  alt="" src="img/logo.jpg" style="width:85%;margin-top:70%" onclick="//jSignIn()">
 </div>
 </body>
 <script type="text/javascript">
@@ -18,7 +19,7 @@ function jSignIn(){
 }
 
 
-//setInterval(jSignIn(), 5000)		// updates the summary every 45 seconds
+interval = setInterval(jSignIn, 2500);
 
 </script>
 </html>

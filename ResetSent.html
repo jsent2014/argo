@@ -1,14 +1,18 @@
-﻿<html>
+<html>
 <head>
 <script src="../js/jquery.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style type="text/css">
+@font-face {
+  font-family: myFirstFont;
+  src: url(fonts/SegoeUI.ttf);
+}
+
 html {
-	scroll-behavior: smooth;
-	font-family:"Calibri";
-	color:#333333;
- 
+  scroll-behavior: smooth;
+  font-family:myFirstFont;
+  color:#333333;
   
 }
 
@@ -106,7 +110,7 @@ function jLogin(){
 			window.open("Welcome.html","_self")
 		}
 	}
-	var URL="http://argo-app.ddns.net/csp/argo/app/AppUserLogin.csp?" + "u=" + T1.value + "&p=" + T2.value
+	var URL="http://argo-app.ddns.net/csp/mysginsider/app/AppUserLogin.csp?" + "u=" + T1.value + "&p=" + T2.value
 	xhttp.open("GET", URL, true);
 	xhttp.send();
 }
